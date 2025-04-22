@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.title {
+    color: #333;
+    text-align: center;
+    margin-block: 2rem;
+}
+
+header .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.red  {
+    color: red;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    color: black;
+    /* background-color: #ccc; */
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+header .btn {
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    color: black;
+    /* background-color: #ccc; */
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.download {
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    background-color: #ccc;
+    transition: .3s ease;
+    width: fit-content;
+    margin: 1rem auto;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.btn:hover,
+.download:hover {
+    background-color: black;
+    color: white;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .statistics {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+}
+
+.statistics .box {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #ccc;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.statistics .box span {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.table {
+    overflow-x: scroll;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1300px;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.delete, 
+.edit {
+    padding: .3rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    transition: .3s ease;
+    cursor: pointer;
+    color: black;
+    opacity: .8;
+}
+
+.delete {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.edit {
+    background-color: burlywood;
+    text-decoration: none;
+}
+
+.delete:hover, 
+.edit:hover {
+    opacity: 1;
+} 
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 6rem;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Custom Container CSS */
+.container {
+    width: 100%; /* Full width by default */
+    max-width: 100%; /* Default max-width */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+/* Breakpoints */
+@media (min-width: 640px) { /* sm */
+    .container {
+        max-width: 640px; /* Max width for small screens */
+    }
+}
+
+@media (min-width: 768px) { /* md */
+    .container {
+        max-width: 768px; /* Max width for medium screens */
+    }
+}
+
+@media (min-width: 1024px) { /* lg */
+    .container {
+        max-width: 1024px; /* Max width for large screens */
+    }
+}
+
+@media (min-width: 1280px) { /* xl */
+    .container {
+        max-width: 1280px; /* Max width for extra large screens */
+    }
+}
+
+@media (min-width: 1536px) { /* 2xl */
+    .container {
+        max-width: 1536px; /* Max width for 2x extra large screens */
+    }
+}

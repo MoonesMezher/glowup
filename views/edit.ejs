@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Glow Up - Update item</title>
+</head>
+<body>
+    <header>
+        <div class="btns">
+            <% for (let i = 0; i < links.length; i++) { %>
+                <a class="btn" href="<%= links[i].route %>"><%= links[i].title %></a>
+            <% } %>        
+        </div>
+    </header>
+    <h1 class="title"><%= message %></h1>
+    <div class="container">
+        <form id="updateForm">
+            <input type="hidden" name="id" id="id" value="<%= item['id'] %>">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= item['name'] %>" required placeholder="Komay Naffaa">
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" value="<%= item['age'] %>" required min="10" placeholder="21"/>
+            </div>
+            <div class="form-group">
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place" value="<%= item['place'] %>" required placeholder="Swaida">
+            </div>
+            <div class="form-group">
+                <label for="problem">Problem:</label>
+                <textarea id="problem" name="problem" required placeholder="Less water..."><%= item['problem'] %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="order">Order:</label>
+                <textarea id="order" name="order" required placeholder="..."><%= item['order'] %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notes:</label>
+                <textarea type="number" id="notes" name="notes" value="<%= item['notes'] %>" placeholder="..."><%= item['order'] %></textarea>
+            </div>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    <script type="module" src="/js/index.js"></script>
+</body>
+</html>

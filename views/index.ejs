@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Glow Up</title>
+</head>
+<body>
+    <header>
+        <div class="btns">
+            <% for (let i = 0; i < links.length; i++) { %>
+                <a class="btn" href="<%= links[i].route %>"><%= links[i].title %></a>
+            <% } %>        
+        </div>
+    </header>
+    <h1 class="title"><%= message %></h1>
+    <div class="container">
+        <div class="statistics">
+            <div class="box">
+                <span>Count</span>
+                <%= statistics.length %>
+            </div>
+            <div class="box">
+                <span>Age Average</span> 
+                <%= statistics.ageAverage %>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Glow Up - Items</title>
+</head>
+<body>
+    <header>
+        <div class="btns">
+            <% for (let i = 0; i < links.length; i++) { %>
+                <a class="btn" href="<%= links[i].route %>"><%= links[i].title %></a>
+            <% } %>        
+        </div>
+    </header>
+    <h1 class="title"><%= message %></h1>
+    <a href="/api/items/download" class="download">Download as Excel</a>
+    <div class="container table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Order</th>
+                    <th>Age</th>
+                    <th>Problem</th>
+                    <th>Place</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% items.forEach(function(user) { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= truncate(user.name) %></td>
+                        <td><%= truncate(user.order) %></td>
+                        <td><%= user.age %></td>
+                        <td><%= truncate(user.problem) %></td>
+                        <td><%= truncate(user.place) %></td>
+                        <td><%= truncate(user.notes) %></td>
+                        <td>
+                            <span class="delete" data-id="<%= user.id %>">Delete</span>
+                            <a class="edit" href="/edit/<%= user.id %>">Edit</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <script type="module" src="/js/index.js"></script>
+</body>
+</html>
