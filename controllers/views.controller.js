@@ -11,7 +11,9 @@ class Views {
     
         const length = items.length;
     
-        const ageAverage = items.map(e => e.age).reduce((a, b) => +a + +b,0) / length;
+        const ageAverage = items.length !== 0? 
+            items.map(e => e.age).reduce((a, b) => +a + +b,0) / length:
+            0;
     
         const statistics = { length, ageAverage }
     
