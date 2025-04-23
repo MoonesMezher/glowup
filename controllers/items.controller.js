@@ -16,7 +16,7 @@ class Items {
     
         try {
             const data = readData();
-            const id = new Date().getTime() + data.length + 1;
+            const id = new Date().getTime();
             const newProduct = product(id, name, order, age, problem, place, notes);
             
             writeData(newProduct);
