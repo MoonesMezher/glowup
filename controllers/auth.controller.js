@@ -26,6 +26,12 @@ class Auth {
             }
 
             const token = this.generateToken(email);
+            
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                maxAge: 1000 * 60 * 60 * 24 // 1 day
+            });
 
             return res.status(200).json({ state: "success", message: "Logged in successfully", token });
         } catch (err) {

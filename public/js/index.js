@@ -15,7 +15,7 @@ class System {
         this.deleteBtns && this.deleteBtns.forEach(e => e.addEventListener('click', this.deleteItem.bind(this)));
         this.updateForm && this.updateForm.addEventListener("submit", this.editItem.bind(this))
         this.loginForm && this.loginForm.addEventListener("submit", this.login.bind(this))
-        this.protectRoutes();
+        // this.protectRoutes();
     }
 
     protectRoutes() {
@@ -50,7 +50,7 @@ class System {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "authorization": this.token
+                // "authorization": this.token
             },
             body: JSON.stringify({ name, age, problem, order, place, notes })
         })
@@ -72,7 +72,7 @@ class System {
         fetch(`/api/items/delete/${id}`, {
             method: 'DELETE',
             headers: {
-                "authorization": this?.token
+                // "authorization": this?.token
             }
         })
         .then(response => {
@@ -102,7 +102,7 @@ class System {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                "authorization": this.token
+                // "authorization": this.token
             },
             body: JSON.stringify({ name, age, problem, order, place, notes }) // Send updated data
         })

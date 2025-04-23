@@ -5,19 +5,20 @@ const router = express.Router();
 const views = require('../controllers/views.controller');
 
 // middlewares
-// const requireAuth = require("../middlewares/auth")
+const requireAuth = require("../middlewares/auth")
+const notAdmin = require("../middlewares/notAdmin")
 
 // routes
-router.get('/', views.indexPage);
+router.get('/', [requireAuth], views.indexPage);
 
-router.get('/home', views.homePage);
+router.get('/home', [notAdmin], views.homePage);
 
-router.get('/login', views.loginPage);
+router.get('/login', [notAdmin],views.loginPage);
 
-router.get('/items', views.itemsPage);
+router.get('/items', [requireAuth],views.itemsPage);
 
-router.get('/add', views.addPage);
+router.get('/add', [requireAuth], views.addPage);
 
-router.get('/edit/:id', views.editPage);
+router.get('/edit/:id', [requireAuth], views.editPage);
 
 module.exports = router;

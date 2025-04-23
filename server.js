@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const errorHandling = require('./middlewares/errorHandling');
 const notFound = require('./middlewares/notFound');
+const cookieParser = require('cookie-parser');
 const app = express();
 
 // Set EJS as the view engine
@@ -12,6 +13,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
+app.use(cookieParser())
 
 // routers
 app.use("/", require("./routes/views.routes"))

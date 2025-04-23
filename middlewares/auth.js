@@ -1,24 +1,23 @@
 const jwt = require('jsonwebtoken');
 
 const requireAuth = (req, res, next) => {
-    const { authorization } = req.headers;
-    
-    if(!authorization) {
-        throw new Error('Authorization must be required');
-    }
+    const token = req.cookies.token;
 
-    const token = authorization.split(' ')[1];
+    if(!token) {
+        return res.redirect('/home');
+    }
 
     try {
         const { email } = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
         if(email !== process.env.EMAIL) {
-            throw new Error('Failed authorization')
+            return res.redirect('/home');
         }
 
         next();
     } catch (err) {
-        throw new Error('Request is not authorized')
+        res.clearCookie('token');
+        return res.redirect('/home');
     }
 }
 
